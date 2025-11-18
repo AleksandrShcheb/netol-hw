@@ -1,0 +1,12 @@
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\src
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\res
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\savegames
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\temp
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\src\main
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\src\test
+Файл создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\src\main\Main.java
+Файл создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\src\main\Utils.java
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\res\drawables
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\res\vectors
+Каталог создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\res\icons
+Файл создан: C:\Code\Java_training\netologyDZ\serializationExercise\Games\temp\temp.txt
