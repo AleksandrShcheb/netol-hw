@@ -7,11 +7,16 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -24,6 +29,11 @@ public class Main {
         String json = listToJson(list);
 
         writeString(json, "data.json");
+
+        String xmlFileName = "data.xml";
+        List<Employee> xmlList = parseXML(xmlFileName);
+        String xmlJson = listToJson(xmlList);
+        writeString(xmlJson, "data2.json");
 
     }
 
@@ -61,5 +71,32 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static List<Employee> parseXML(String fileName) {
+        List<Employee> employees = new ArrayList<>();
+
+        try {
+            DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+            Document doc = builder.parse(fileName);
+            NodeList employeeNodes = doc.getElementsByTagName("employee");
+
+            for (int i = 0; i < employeeNodes.getLength(); i++) {
+                org.w3c.dom.Element employee = (org.w3c.dom.Element) employeeNodes.item(i);
+
+                employees.add(new Employee(
+                        Long.parseLong(employee.getElementsByTagName("id").item(0).getTextContent()),
+                        employee.getElementsByTagName("firstName").item(0).getTextContent(),
+                        employee.getElementsByTagName("lastName").item(0).getTextContent(),
+                        employee.getElementsByTagName("country").item(0).getTextContent(),
+                        Integer.parseInt(employee.getElementsByTagName("age").item(0).getTextContent())
+                ));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return employees;
     }
 }
