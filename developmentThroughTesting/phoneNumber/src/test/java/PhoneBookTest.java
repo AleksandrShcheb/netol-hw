@@ -13,10 +13,10 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void find(){
+    public void findByNumber(){
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Jim", 8800);
-        int res = (int) phoneBook.findByNumber(8800);
+        String res = (String) phoneBook.findByNumber(8800);
         assertEquals("Jim", res);
     }
 }
