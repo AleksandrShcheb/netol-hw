@@ -28,6 +28,9 @@ public class PhoneBook {
     }
 
     public Integer findByName(String name) {
+        if (name.equals(this.name)) {
+            return this.number;
+        }
         return null;
     }
 
