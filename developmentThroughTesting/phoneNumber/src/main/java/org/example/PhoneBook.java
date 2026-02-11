@@ -37,7 +37,7 @@ public class PhoneBook {
     }
 
     public List<String> printAllNames() {
-        return null;
+        return List.of(this.name);
     }
 
 }
