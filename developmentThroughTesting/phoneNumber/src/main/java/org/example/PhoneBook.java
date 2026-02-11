@@ -5,4 +5,8 @@ public class PhoneBook {
         return 1;
     }
 
+    public Object findByNumber(int number){
+        return null;
+    }
+
 }
