@@ -1,6 +1,8 @@
 import org.example.PhoneBook;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class PhoneBookTest {
@@ -26,5 +28,13 @@ public class PhoneBookTest {
         phoneBook.add("Jim", 8800);
         Integer number = phoneBook.findByName("Jim");
         assertEquals(Integer.valueOf(8800), number);
+    }
+
+    @Test
+    public void printAllNamesReturnsOneName() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Jim", 8800);
+        List<String> names = phoneBook.printAllNames();
+        assertEquals(List.of("Jim"), names);
     }
 }

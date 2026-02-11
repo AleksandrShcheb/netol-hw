@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.List;
+
 public class PhoneBook {
 
     private String name;
@@ -31,6 +33,10 @@ public class PhoneBook {
         if (name.equals(this.name)) {
             return this.number;
         }
+        return null;
+    }
+
+    public List<String> printAllNames() {
         return null;
     }
 
